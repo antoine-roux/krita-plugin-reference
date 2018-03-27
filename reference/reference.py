@@ -141,7 +141,7 @@ class ReferenceDocker(DockWidget):
 
     def __init__(self):
         super().__init__()
-        self.currentDir = '.'
+        self.currentDir = Application.readSetting('referenceDocker', 'lastdir', '.')
 
         self.setWindowTitle("Reference Docker")
 
@@ -179,6 +179,8 @@ class ReferenceDocker(DockWidget):
             return
 
         self.currentDir = os.path.dirname(fileName)
+        Application.writeSetting('referenceDocker', 'lastdir', self.currentDir)
+
         self.viewer.setImage(QImage(fileName))
 
     @pyqtSlot(QColor)
