@@ -73,8 +73,10 @@ class ReferenceViewer(QWidget):
         painter = QPainter(self)
         painter.setRenderHint(QPainter.Antialiasing)
 
-        image = self.image.scaled(self.image.size() * self.zoom, Qt.KeepAspectRatio, Qt.SmoothTransformation)
-        painter.drawImage(self.origin.x(), self.origin.y(), image)
+        rect = QRect(-self.origin / self.zoom, self.size() / self.zoom)
+        cropped = self.image.copy(rect)
+        image = cropped.scaled(self.size(), Qt.KeepAspectRatio, Qt.SmoothTransformation)
+        painter.drawImage(0, 0, image)
 
         if self.pressedPoint is not None and not self.moving:
             painter.setPen(QPen(QColor(255, 255, 255, 128), 3.0))
