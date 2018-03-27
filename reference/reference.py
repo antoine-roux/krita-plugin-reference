@@ -170,6 +170,10 @@ class ReferenceDocker(DockWidget):
         layout.addLayout(buttonLayout)
         self.setWidget(widget)
 
+        fileName = Application.readSetting('referenceDocker', 'lastref', None)
+        if fileName is not None:
+            self.viewer.setImage(QImage(fileName))
+
     def centerView(self):
         self.viewer.resetView()
 
@@ -177,6 +181,8 @@ class ReferenceDocker(DockWidget):
         fileName, _filter = QtWidgets.QFileDialog.getOpenFileName(None, "Open an image", self.currentDir)
         if not fileName:
             return
+
+        Application.writeSetting('referenceDocker', 'lastref', fileName)
 
         self.currentDir = os.path.dirname(fileName)
         Application.writeSetting('referenceDocker', 'lastdir', self.currentDir)
