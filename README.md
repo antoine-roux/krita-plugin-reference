@@ -12,7 +12,7 @@ As said at https://krita.org/en/item/krita-4-0-0-released/, the removal is only 
 
 Open Krita, in Settings -> Manage Resources click on the Open Resource Folder button.
 
-Copy-paste all files in the pykrita folder and restart Krita.
+Copy-paste all files from https://github.com/antoine-roux/krita-plugin-reference/archive/master.zip in the pykrita folder and restart Krita.
 
 ## How to enable
 
