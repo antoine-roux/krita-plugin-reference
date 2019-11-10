@@ -12,7 +12,11 @@ As said at https://krita.org/en/item/krita-4-0-0-released/, the removal is only 
 
 Open Krita, in Settings -> Manage Resources click on the Open Resource Folder button.
 
-Copy-paste all files from https://github.com/antoine-roux/krita-plugin-reference/archive/master.zip in the pykrita folder and restart Krita.
+Copy-paste all files from https://github.com/antoine-roux/krita-plugin-reference/archive/master.zip in the pykrita folder
+
+Add [execution permissions](https://askubuntu.com/questions/229589/how-to-make-a-file-e-g-a-sh-script-executable-so-it-can-be-run-from-a-termi) to the file reference.py (stored inside the 'reference' folder). 
+
+Restart Krita.
 
 ## How to enable
 
