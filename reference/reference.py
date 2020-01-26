@@ -31,7 +31,7 @@ class ReferenceViewer(QWidget):
 
     def __init__(self, parent=None, flags=None):
         super().__init__(parent)
-        self.setSizePolicy(QSizePolicy.MinimumExpanding, QSizePolicy.MinimumExpanding)
+        self.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
         self.setCursor(QCursor(Qt.CrossCursor))
 
         self.image = QImage()
