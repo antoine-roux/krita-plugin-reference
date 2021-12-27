@@ -63,7 +63,7 @@ class ReferenceViewer(QWidget):
         self.zoom = min(self.size().width() / self.image.size().width(),
                         self.size().height() / self.image.size().height())
         overflow = self.size() - (self.image.size() * self.zoom)
-        self.origin = QPoint(overflow.width() / 2, overflow.height() / 2)
+        self.origin = QPoint(int(overflow.width() / 2), int(overflow.height() / 2))
         self.update()
 
     def paintEvent(self, event):
